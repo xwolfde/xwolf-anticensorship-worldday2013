@@ -26,7 +26,7 @@ define("XW_PROTEST_MORE", 'Weitere Informationen bei <a href="http://www.reporte
 define("XW_PROTEST_usecookie", true);
 define("XW_PROTEST_cookiename", 'seen_worldday2013');
 
-define("XW_TESTMODE", true);
+define("XW_TESTMODE", false);
 define("XW_PROTEST_year", '2013');
 define("XW_PROTEST_month", '03');
 define("XW_PROTEST_day", '12');
