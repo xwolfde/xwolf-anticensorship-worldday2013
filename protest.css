@@ -11,16 +11,30 @@
 }
 
 #protest div {
-	position: absolute;
-	width: 400px;
-	height: 300px;
-	z-index: 200;
-	background: #FFF;
-	top: 30%; left: 50%;
-	margin-top: -100px; margin-left: -150px;
-	background: url(protest.png);
+    background: none repeat scroll 0 0 black;
+    border-radius: 10px 10px 10px 10px;    
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 100px;
+    padding: 0;
+    position: absolute;
+    width: 400px;
+    z-index: 200;
+    min-height: 300px;
 }
-
+#protest div p.more {
+    color: white;
+    font-site: 0.8em;
+    padding: 0.3em;
+    text-align: center;
+    text-shadow: 1px 1px 1px #222;
+    margin-bottom: 1em;
+}
+#protest div p.more a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}    
 #protest .close {
 	top: 0;
 	float: right;
@@ -59,7 +73,8 @@
 
 #protest .link {
 	color: transparent;
-	margin: 5px;
+	margin: 0px;
+        padding: 0px;
 	width: 300px;
 	height: 200px;
 }
