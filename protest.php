@@ -21,7 +21,7 @@ define("XW_PROTEST_URL", 'http://www.piratenpartei.de/2013/03/07/welttag-gegen-i
 define("XW_PROTEST_IMAGE", 'protest.png');
 define("XW_PROTEST_ALTTEXT", 'Welttag gegen Internetzensur - 12.03. International Blackour Day');
 define("XW_PROTEST_LONGTEXT", 'Wir zeigen uns solidarisch mit allen durch Überwachung und Zensur eingeschränkten Journalisten und Aktivisten weltweit. Die Organisationen Reporter ohne Grenzen und die Piratenpartei rufen am Welttag gegen Internetzensur zu Protesten auf. ');
-define("XW_PROTEST_MORE", 'Weitere Informationen bei <a href="http://www.reporter-ohne-grenzen.de/">Reporter ohne Grenzen</a>.');
+define("XW_PROTEST_MORE", 'Weitere Informationen bei <a href="http://www.reporter-ohne-grenzen.de/">Reporter ohne Grenzen</a>. <a href="http://wiki.piratenpartei.de/Welttag-gegen-Internetzensur-2013">Informationen, sowie Plugins und Banner</a> zur Teilnahme finden sich auf dem Wiki der Piratenpartei Deutschland.');
 
 define("XW_PROTEST_usecookie", true);
 define("XW_PROTEST_cookiename", 'seen_worldday2013');
@@ -60,7 +60,9 @@ function xw_see_check() {
     if (is_admin()) {
         return false;
     }    
-    
+    if (XW_TESTMODE) {
+	    return true;
+	}
     if ( isset( $_COOKIE ) && array_key_exists( XW_PROTEST_cookiename, $_COOKIE ) && (XW_PROTEST_usecookie) ) {		
 		return false;
      }
@@ -92,7 +94,7 @@ function xw_protest_footercode() {
         \'<div id=\"protest\"><div><a href=\"#\" class=\"close\">X</a>\' +
         \'<a class=\"link\" href=\"';
 	echo XW_PROTEST_URL;
-	echo '\"><img src=\"';
+	echo '\"><img width=\"400\" height=\"300\" src=\"';
 	echo $xw_protest_path.XW_PROTEST_IMAGE.'\"';
         if (XW_PROTEST_ALTTEXT) { echo ' alt=\"'.XW_PROTEST_ALTTEXT.'\"'; }
         if (XW_PROTEST_LONGTEXT) { echo ' longdesc=\"'.XW_PROTEST_LONGTEXT.'\"'; }
@@ -109,8 +111,9 @@ function xw_protest_footercode() {
     	$(\'#protest\').fadeOut();
     	return false;
     });
-
- $(\'#protest\').fadeIn();
+    if ($(window).width() >= 600) {
+	$(\'#protest\').fadeIn();
+    }
 });
 
 $(window).bind(\'resize\', function(){
