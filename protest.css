@@ -22,10 +22,29 @@
     z-index: 200;
     min-height: 300px;
 }
-#protest div p.more {
-    color: white;
-    font-size: 0.8em;
+#protest h1 {
+    font-family: Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    font-size: 2em;
     padding: 1em;
+    text-align: center;
+    line-height: 1.2em;
+    color: white;
+    background: transparent;
+    text-transform: uppercase;
+}    
+#protest div p {
+    color: white;
+    background: transparent;
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+    text-shadow: 1px 1px 1px #222;
+    margin-bottom: 1em;
+    line-height: 1.1em;
+}
+#protest div p.more {
+    font-size: 0.8em;
     text-align: center;
     text-shadow: 1px 1px 1px #222;
     margin-bottom: 1em;
@@ -36,6 +55,7 @@
     font-weight: bold;
     color: white;
 }    
+
 #protest .close {
 	top: 0;
 	float: right;
@@ -71,11 +91,12 @@
 		0px -1px 0px rgba(000,000,000,0.7),
 		0px 1px 0px rgba(255,255,255,0.3);
 }
-
+#protest a.close:hover, #protest a.close:focus {
+    background: white;
+    color: red;
+} 
 #protest .link {
-	color: transparent;
-	margin: 0px;
-        padding: 0px;
-	width: 300px;
-	height: 200px;
+	text-decoration: none;
+    font-weight: bold;
+    color: white;
 }

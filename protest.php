@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 define("XW_PROTEST_URL", 'http://www.piratenpartei.de/2013/03/07/welttag-gegen-internetzensur-2013/');
 define("XW_PROTEST_IMAGE", 'protest.png');
-define("XW_PROTEST_ALTTEXT", 'Welttag gegen Internetzensur - 12.03. - International Blackour Day');
+define("XW_PROTEST_TITLE", 'Welttag gegen Internetzensur <br>12.03.2013');
 define("XW_PROTEST_LONGTEXT", 'Wir zeigen uns solidarisch mit allen durch Überwachung und Zensur eingeschränkten Journalisten und Aktivisten weltweit. Die Organisationen Reporter ohne Grenzen und die Piratenpartei rufen am Welttag gegen Internetzensur zu Protesten auf. ');
 define("XW_PROTEST_MORE", 'Weitere Informationen bei <a href="http://www.reporter-ohne-grenzen.de/">Reporter ohne Grenzen</a>. <a href="http://wiki.piratenpartei.de/Welttag-gegen-Internetzensur-2013">Informationen, sowie Plugins und Banner</a> zur Teilnahme finden sich auf dem Wiki der Piratenpartei Deutschland.');
 
@@ -91,14 +91,29 @@ function xw_protest_footercode() {
 	echo '<script type="text/javascript">
 	/* <![CDATA[ */';
 	echo '$(function () {  $(\'body\').append($(
-        \'<div id=\"protest\"><div><a href=\"#\" class=\"close\">X</a>\' +
-        \'<a class=\"link\" href=\"';
-	echo XW_PROTEST_URL;
-	echo '\"><img width=\"400\" height=\"300\" src=\"';
-	echo $xw_protest_path.XW_PROTEST_IMAGE.'\"';
-        if (XW_PROTEST_ALTTEXT) { echo ' alt=\"'.XW_PROTEST_ALTTEXT.'\"'; }
-        if (XW_PROTEST_LONGTEXT) { echo ' longdesc=\"'.XW_PROTEST_LONGTEXT.'\"'; }
-        echo '></a>\' + ';
+        \'<div id=\"protest\"><div><a href=\"#\" class=\"close\" tabindex=\"1\">X</a>\' + ';
+	if (XW_PROTEST_IMAGE) {
+	    echo '\'<p>';
+	    if (XW_PROTEST_URL) { echo '<a class=\"link\" href=\"'.XW_PROTEST_URL.'\">'; }
+	    echo '<img src=\"';
+	    echo $xw_protest_path.XW_PROTEST_IMAGE.'\"';
+	    if (XW_PROTEST_TITLE) { echo ' alt=\"'.XW_PROTEST_TITLE.'\"'; }
+	    if (XW_PROTEST_LONGTEXT) { echo ' longdesc=\"'.XW_PROTEST_LONGTEXT.'\"'; }
+	    echo '>';
+	    if (XW_PROTEST_URL) { echo '</a>'; }
+	    echo '</p>\' + ';
+	} else {
+	    if (XW_PROTEST_TITLE) { 
+		echo '\'<h1>';
+		if (XW_PROTEST_URL) { echo '<a class=\"link\" href=\"'.XW_PROTEST_URL.'\">'; }
+		echo XW_PROTEST_TITLE;
+		if (XW_PROTEST_URL) { echo '</a>'; }
+		echo '</h1>'; 
+		echo '\' + ';
+	    }	    
+	    if (XW_PROTEST_LONGTEXT) { echo '\'<p>'.XW_PROTEST_LONGTEXT.'</p>\' + '; } 
+	}
+	
         if (XW_PROTEST_MORE) { echo '\'<p class=\"more\">'.XW_PROTEST_MORE.'</p>\' + '; } 
             
         echo '\'</div>';
