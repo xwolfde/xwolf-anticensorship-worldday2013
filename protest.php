@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Notice for the world day against cyber censorship 2013
+Plugin Name: Worldday 2013 against Cyber-Censorship 
 Plugin URI: http://piratenkleider.xwolf.de/plugins/anticensorship-worldday2013
-Description: Simple Plugin which enables a dark colored notice for the world day against cyber-censorship 2013 (between hours: 8 - 20). Read nore on:  http://www.reporter-ohne-grenzen.de. Plugin was made by the Pirate Party Germany to use in wordpress related sites. 
+Description: Black Day Plugin for the world day against cyber censorship 2013: Simple Plugin which enables a dark colored notice for the world day against cyber-censorship 2013 (between hours: 8 - 20). Read nore on:  http://www.reporter-ohne-grenzen.de. Plugin was made by the Pirate Party Germany to use in wordpress related sites. 
 Tags:  Internet Censorship, Worldday 2013, cyber censorship
 Plugin URI: https://github.com/xwolfde/xwolf-anticensorship-worldday2013
-Version: 1.0.1
+Version: 1.0.2
 Author: xwolf
 Author URI: http://blog.xwolf.de
 License: GPL2
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 /**
- * Define Constants 
+ * Constants 
  */
 define("XW_PROTEST_URL", 'http://www.piratenpartei.de/2013/03/07/welttag-gegen-internetzensur-2013/');
 define("XW_PROTEST_IMAGE", 'protest.png');
